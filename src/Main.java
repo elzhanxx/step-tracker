@@ -3,17 +3,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        StepTracker stepTracker = new StepTracker(scanner);
 
         while (true){
             printMenu();
             int userCommand = scanner.nextInt();
             switch (userCommand){
-                case 1 -> ;
-                case 2 -> ;
-                case 3 -> ;
-                case 4 -> scanner.close();return;
-                default -> System.out.println("Такой команды нет");;
+                case 1 -> stepTracker.addNewNumberStepsPerDay();
+                case 2 -> stepTracker.changeStepGoal();
+                case 3 -> stepTracker.printStatistic();
+                case 4 -> {
+                    return;
+                }
+                default -> System.out.println("Такой команды нет");
             }
         }
     }
